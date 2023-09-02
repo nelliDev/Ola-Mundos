@@ -19,7 +19,6 @@ lab02/
 │  ├─ 2.out
 │  ├─ 3.in
 │  ├─ 3.out
-
 ```
 ### Sobre tester.py:
 Eu (nelli) não gostei do codepost por alguns motivos.
@@ -41,11 +40,15 @@ Supondo que os arquivos testes já foram criados corretamente:
 #### Exemplo:
 Supomos que o miniquerido Lucas Baptista acabou de te enviar o código dele do ```lab01``` pronto como ```lucas01.py```. Adicone ```lucas.py``` em ```/lab01/submissoes``` e rode (no terminal):
 
-```python3 tester.py lab01 lucas.py``` 
+```
+python3 tester.py lab01 lucas.py
+``` 
 
 Oh no! Todos os testes deram errados! Será que ele errou tudo mesmo ou errou a formatação do output? Vamos corrigir manualmente rodando
 
-```python3 tester.py lab01 lucas.py manual```
+```
+python3 tester.py lab01 lucas.py manual
+```
 
 Agora os testes serão executados 1 a 1 automaticamente, com o avaliador apenas dizendo se ele errou ou acertou cada um.
 
