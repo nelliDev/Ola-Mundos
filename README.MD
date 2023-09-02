@@ -44,7 +44,7 @@ Supomos que o miniquerido Lucas Baptista acabou de te enviar o código dele do `
 python3 tester.py lab01 lucas.py
 ``` 
 
-Oh no! Todos os testes deram errados! Será que ele errou tudo mesmo ou errou a formatação do output? Vamos corrigir manualmente rodando
+Oh no! Todos os testes deram errados! Será que ele errou tudo mesmo ou só errou a formatação do output? Vamos corrigir manualmente rodando
 
 ```
 python3 tester.py lab01 lucas.py manual
