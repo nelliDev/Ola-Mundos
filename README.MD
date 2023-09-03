@@ -34,7 +34,7 @@ Por isso criei esse repositório para os professores, que possibilita, além da 
 Supondo que os arquivos testes já foram criados corretamente:
 1. Clonar o repositório (ou não, acho que dá pra rodar no vscode do navegador que vem com o github) e entrar nele pelo terminal.
 1. Adicionar o arquivo a ser corrigido em ```/{nome do lab}/submissoes/``` (cuidado para não ter nomes de arquivos repetidos).
-1. No terminal, rode tester.py com os seguintes argumentos: nome do lab, nome do arquivo, modo de correção(opcional).
+1. No terminal, rode tester.py com os seguintes argumentos: nome do lab, nome do arquivo, modo de correção (auto, semi ou manual).
 1. Pronto!
 
 #### Exemplo:
@@ -44,14 +44,22 @@ Supomos que o miniquerido Lucas Baptista acabou de te enviar o código dele do `
 python3 tester.py lab01 lucas.py
 ``` 
 
-Oh no! Todos os testes deram errados! Será que ele errou tudo mesmo ou só errou a formatação do output? Vamos corrigir manualmente rodando
+Oh no! Todos os testes deram errados! Será que ele errou tudo mesmo ou só errou a formatação do output? Vamos corrigir semiautomaticamente rodando.
+
+```
+python3 tester.py lab01 lucas.py semi
+```
+
+Agora os testes serão executados 1 a 1 automaticamente, mostrando apenas a saída, com o avaliador apenas dizendo se ele errou ou acertou cada um.
+
+Eita, agora vimos que o programa do aluno está se comportando mal e as saídas ainda estão todas erradas. O problema provavelmente está na formatação da entrada. Vamos rodar novamente, agora de forma manual.
+
 
 ```
 python3 tester.py lab01 lucas.py manual
 ```
 
-Agora os testes serão executados 1 a 1 automaticamente, com o avaliador apenas dizendo se ele errou ou acertou cada um.
+Agora o avaliador será informado qual é a entrada padrão de cada teste para poder adaptá-la digitando manualmente. Depois de digitar, basta comparar as saídas como no modo semiautomático.
 
 Pronto, agora já podemos saber a nota dos testes (no caso do Lucas 18/21)!
-
 

@@ -32,15 +32,15 @@ def teste_auto(absolute_path, submission_path, lab, num_testes):
     return errados
     
     
-def teste_manual(absolute_path, submission_path, lab, num_testes):
+def teste_semimanual(absolute_path, submission_path, lab, num_testes):
     errados = []
     for i in range(1, num_testes+1):
+        os.system('clear')
         test_path = os.path.join(absolute_path, f"{lab}/testes/{i}")
         
         result = os.popen(f"python3 {submission_path} < {test_path}.in").read()
         expected = os.popen(f"cat {test_path}.out").read()
-        
-        os.system('clear')
+
         print(f"teste {i}:")
         print("=========== Resultado obtido: ================")
         print(result)
@@ -48,7 +48,35 @@ def teste_manual(absolute_path, submission_path, lab, num_testes):
         print(expected)
         print()
         
-        avaliacao = input("Vc acha que ta certo? (s/n)")[0].lower()
+        avaliacao = input("Vc acha que ta certo(s/n)? ")[0].lower()
+        if avaliacao != 's':
+            errados.append((i, result, expected))
+            
+    return errados
+
+def teste_manual(absolute_path, submission_path, lab, num_testes):
+    errados = []
+    for i in range(1, num_testes+1):
+        os.system('clear')
+        test_path = os.path.join(absolute_path, f"{lab}/testes/{i}")
+        
+        expected_input = os.popen(f"cat {test_path}.in").read()
+        
+        print(f"Anote a entrada padrão desse teste (teste{i})")
+        print("Digite a entrada adaptada abaixo:")
+        print(expected_input)
+        
+        result = os.popen(f"python3 {submission_path}").read()
+        expected = os.popen(f"cat {test_path}.out").read()
+        
+        print(f"teste {i}:")
+        print("=========== Resultado obtido: ================")
+        print(result)
+        print("========== Resultado esperado: ===============")
+        print(expected)
+        print()
+        
+        avaliacao = input("Vc acha que ta certo(s/n)? ")[0].lower()
         if avaliacao != 's':
             errados.append((i, result, expected))
             
@@ -67,8 +95,14 @@ def main():
     
     if len(sys.argv) == 3 or sys.argv[3] == "auto":
         errados = teste_auto(absolute_path, submission_path, lab, num_testes)
-    else:
+    elif sys.argv[3] == "semi":
+        errados = teste_semimanual(absolute_path, submission_path, lab, num_testes)
+    elif sys.argv[3] == "manual":
         errados = teste_manual(absolute_path, submission_path, lab, num_testes)
+    else:
+        print(Fore.RED + "Esse modo de correção não existe!")
+        print(Style.RESET_ALL)
+        sys.exit()
             
 
     print(Style.RESET_ALL)
@@ -76,4 +110,5 @@ def main():
         mostra_errados(errados)
     
     print(f"nota: {num_testes-len(errados)}/{num_testes}")
+
 main()
