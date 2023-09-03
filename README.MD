@@ -34,7 +34,7 @@ Por isso criei esse repositório para os professores, que possibilita, além da 
 Supondo que os arquivos testes já foram criados corretamente:
 1. Clonar o repositório (ou não, acho que dá pra rodar no vscode do navegador que vem com o github) e entrar nele pelo terminal.
 1. Adicionar o arquivo a ser corrigido em ```/{nome do lab}/submissoes/``` (cuidado para não ter nomes de arquivos repetidos).
-1. No terminal, rode tester.py com os seguintes argumentos: nome do lab, nome do arquivo, modo de correção (auto, semi ou manual).
+1. No terminal, rode tester.py com os seguintes argumentos: nome do lab, nome do arquivo, modo de correção (auto - default, semi ou manual).
 1. Pronto!
 
 #### Exemplo:
