@@ -1,68 +1,64 @@
-ryan = 0
-barbie = "0"
-print("Olá! Pronta pra descobrir qual barbie você é?")
-print("Qual a sua atividade favorita?")
-print("A) cantar")
-print("B) dançar")
-print("C) codar")
-resposta = input()
-if resposta == 'A':
-    print("Você gosta de natureza?")
-    print("A) Sim")
-    print("B) Não")
-    resposta2 = input()
-    if resposta2 == 'A':
-        print("Você é competitiva?")
-        print("A) Sim")
-        print("B) Não")
-        resposta3 = input()
-        if resposta3 == 'A':
-            barbie = "Merliah - Barbie em  vida de Sereia"
-        elif resposta3 == 'B':
-            barbie = "Rosella - Barbie em  princesa da ilha"
-    elif resposta2 == 'B':
-        barbie = "Liana - Barbie em o Castelo de Diamante"
-elif resposta == 'B':
-    print("Qual atividade você gosta mais?")
-    print("A) dirigir")
-    print("B) dançar")
-    resposta4 = input()
-    if resposta4 == 'A':
-        ryan = 1
-    elif resposta4 == 'B':
-        print("Você tem irmãos?")
-        print("A) Sim")
-        print("B) Não")
-        resposta5 = input()
-        if resposta5 == 'B':
-            barbie = "Odette - Barbie lago dos cisnes"
-        elif resposta5 == 'A':
-            print("Quantos irmãos você tem?")
-            irmaos = int(input())
-            if irmaos == 0:
+#projeto barbie
+
+print(f"Olá! Pronta para descobrir qual Barbeie você é?", "\n\nQual a sua atividade favorita?", "\n\nA)Cantar", "\nB)Dançar", "\nC)Codar")
+
+resposta = input("\nDigite sua resposta: ")
+
+if resposta =="A":
+    print(f"\nVocê gosta de natureza?", "\n\nA)Sim", "\nB)Não")   
+    rsp2 = input("Digite sua resposta: ")
+    if rsp2 == "B":
+        barbie = "Liana - Barbie em o castelo de diamente"
+    else:
+        print(f"Essa Barbie não existe")
+        if rsp2 == "A":
+            print(f"\nvoce e competitiva?", "\n\nA)Sim", "\nB)Nao")
+            rsp3 = input("Digite sua resposta: ")
+            if rsp3 == "A":
+                barbie = "Merliah - Barbie em vida de Sereia"
+                if rsp3 == "B":
+                    barbie = "Rosella - Barbie em princesa da ilha"            
+            else:
+                print(f"Essa barbie não existe")
+        else:
+            print(f"Essa Barbie não existe")
+elif resposta == "B":
+    print(f"\nQual atividade você gosta mais?", "\n\nA)Dirigir", "\nB)Dançar")
+    rsp4 = input("Digite sua resposta: ")
+    if rsp4 == "A":
+        barbie = "Ryan Gosling"
+        print(f"OMG he is literally me, Ryan Gosling")
+    elif rsp4 == "a":
+        print(f"Essa Barbie não existe")    
+    else:
+        print(f"\nVocê tem irmãos?", "\n\nA)Sim\nB)Não")
+        rsp5 = input("Digite sua resposta: ")
+        if rsp5 == "B":
+            barbie = "“Odette - Barbie lago dos cisnes"
+        else:
+            print(f"\nQuantos irmãos você tem?")
+            n_irm = input("Digite sua resposta: ")
+            if n_irm == "0":
                 barbie = "Barbie sem irmãos"
-            elif irmaos > 0 and irmaos<3:
-                barbie = "Tori - Barbie: a princesa e a popstar"
-            elif irmaos==3:
-                barbie = "Corinne - Barbie e as três mosqueteiras"
+                if n_irm>"0" and n_irm<="3":
+                    barbie = "Barbie sem irmãos"
+                    if n_irm == "3":
+                        barbie = "Corinne - Barbie e as três mosqueteiras"
             else:
                 barbie = "Genevieve - Barbie 12 princesas"
-elif resposta == 'C':
-    print("Qual você gosta mais?")
-    print("A) moda")
-    print("B) estudar")
-    print("C) brincar com pet")
-    resposta2 = input()
-    if resposta2 == 'A':
+elif resposta == "C":
+    print(f"\nQual você gosta mais?\n\nA)Moda\nB)Estudar\nC)Brincar com pet")
+    rsp6 = input("Digite sua resposta: ")
+    if rsp6 == "A":
         barbie = "A Barbie - Moda e Magia"
-    elif resposta == 'B':
-        barbie = "Blair - Barbie escola de princesas"
-    elif resposta == 'C':
-        barbei = "Elina - Barbie fairytopia"
- 
-if ryan :
-    print("OMG he’s literally me, Ryan Gosling")
-elif barbie == "0":
-    print("Essa Barbie não existe!")
+    elif rsp6 == "B":
+            barbie = "Blair - Barbie escola de princesas"
+    elif rsp6 == "C":
+            barbie = "Elina - Barbie fairytopia"
 else:
-    print("Parabéns! Sua Barbie é", barbie)
+    print(f"Essa Barbie não existe")
+     
+if (barbie != "Essa Barbie não existe" and barbie != "OMG he is literally me, Ryan Gosling"):
+    print("Parabéns! Sua barbie eh ", barbie)
+else:
+    print(barbie)
